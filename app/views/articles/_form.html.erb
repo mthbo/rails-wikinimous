@@ -1,0 +1,20 @@
+<%= form_for(@article) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content%>
+  </div>
+
+  <div><%= f.submit %></div>
+<% end %>
+
+
+  <script>
+      var article_content = ace.edit("article_content");
+      var MarkdownMode = ace.require("ace/mode/markdown").Mode;
+      article_content.session.setMode(new MarkdownMode());
+  </script>
